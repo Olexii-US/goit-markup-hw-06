@@ -620,16 +620,15 @@ footer {
   transition: opacity 250ms linear;
   }
 
-/* .backdrop.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   /* visibility: visible; */
   visibility: hidden;
-} */
+} 
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.5);
-
 }
 
 .modal {
@@ -654,7 +653,6 @@ footer {
 
 
 .modal-button-close {
-
   position: absolute;
   top: 8px;
   right: 8px;
@@ -672,15 +670,13 @@ footer {
   border-radius: 50%;
 
   background-color: var(--main-background)
-}
-
-.close {
   fill: var(--logo-black);
 
   transition: fill 250ms var(--cubic-bezier-stand);
 }
-.close:hover,
-.close:focus {
+
+.modal-button-close:hover,
+.modal-button-close:focus {
   fill: var(--accent-colour);
 }
 
@@ -697,24 +693,18 @@ footer {
   color: var(--secondary-text-color);
 }
 
-
-
-
 .modal-input-cont {
   position: relative;
   margin-top: 4px;
   margin-bottom: 10px;
-
-  transition: fill 250ms var(--cubic-bezier-stand);
 }
 
-.modal-input-cont:hover,
-.modal-input-cont:focus {
+.modal-input:focus + .modal-svg,
+.modal-input:hover + .modal-svg {
   fill: var(--accent-colour);
 }
 
-
-.modal-input-cont > input {
+.modal-input {
   font-style: inherit;
   padding: 12px 12px 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -732,7 +722,6 @@ footer {
   transform: translateY(-50%);
   transition: fill 250ms var(--cubic-bezier-stand);
 }
-
 
 .modal-coment-cont {
   margin-top: 4px;
@@ -755,8 +744,6 @@ footer {
   color: rgba(117, 117, 117, 0.5);
 }
 
-
-
 .modal-input:hover,
 .modal-input:focus {
   border-color: var(--accent-colour)
@@ -765,18 +752,55 @@ footer {
 .checkbox {
   display: flex;
   justify-content: center;
+  align-items: center;
   line-height: 1.71;
   color: var(--secondary-text-color);
 }
+
+.checkbox-input {
+  /* appearance: none;
+  position: absolute; */
+  left: 54px;
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-svg {
+  position: absolute;
+  left: 54px;
+  width: 16px;
+  height: 15px;
+  background-image: url(../img/uncheck.svg);
+}
+
+.checkbox-input:checked + .checkbox-svg {
+  background-image: url(../img/check.svg);
+  opacity: 1;
+}
+.checkbox-input:focus + .checkbox-svg {
+  background-image: url(../img/uncheck-blue.svg);
+}
+.checkbox-input:checked:focus + .checkbox-svg {
+  background-image: url(../img/check.svg);
+}
+
 .checkbox-link {
   text-decoration: underline;
   color: var(--accent-colour);
 }
 .checkbox-text {
-  margin-left: 8px;
-
+  margin-left: 23px;
 }
-
 
 .button-modal {
   display: block;
@@ -788,9 +812,6 @@ footer {
 .button-modal:hover {
   background-color: #188CE8;
 }
-
-
-
 
 
 /* portfolio */
